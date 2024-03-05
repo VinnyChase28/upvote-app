@@ -1,8 +1,10 @@
+import Upvote from "./components/Upvote";
+import "./App.css";
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>test</p>
+        <Upvote postId="1" />
       </header>
     </div>
   );
