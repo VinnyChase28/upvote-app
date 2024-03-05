@@ -1,6 +1,6 @@
 import React from "react";
-import { Toggle } from "./ui/toggle";
-import { useUpvoteStore } from "../store/store";
+import { Toggle } from "../ui/toggle";
+import { useUpvoteStore } from "../../store/store";
 import { ArrowUp } from "lucide-react";
 
 interface UpvoteProps {
@@ -18,7 +18,7 @@ const Upvote: React.FC<UpvoteProps> = ({ postId }) => {
       aria-pressed={isSelected}
       variant={isSelected ? "outline" : "default"}
     >
-      <ArrowUp color={isSelected ? "black" : "orange"} />
+      <ArrowUp color={isSelected ? "orange" : "black"} />
     </Toggle>
   );
 };

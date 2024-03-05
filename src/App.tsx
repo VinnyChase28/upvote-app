@@ -1,5 +1,5 @@
-import UpvotesList from "./components/UpvoteList";
-import PostList from "./components/PostList";
+import UpvotesList from "./components/UpvoteList/UpvoteList";
+import PostList from "./components/PostList/PostList";
 import type { Post } from "./types";
 import "./App.css";
 

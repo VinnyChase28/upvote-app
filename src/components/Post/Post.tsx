@@ -1,7 +1,6 @@
-// components/Post.tsx
 import React from "react";
-import { Card } from "./ui/card";
-import Upvote from "./Upvote";
+import { Card } from "../ui/card";
+import Upvote from "../Upvote/Upvote";
 
 interface PostProps {
   postId: string;

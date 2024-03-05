@@ -1,9 +1,9 @@
 import React from "react";
-import { Alert, AlertTitle, AlertDescription } from "./ui/alert";
-import Upvote from "./Upvote";
+import { Alert, AlertTitle, AlertDescription } from "../ui/alert";
+import Upvote from "../Upvote/Upvote";
 import { FileTerminal } from "lucide-react";
 
-interface AlertComponentProps {
+export interface AlertComponentProps {
   postId: string;
   title: string;
   description: string;
