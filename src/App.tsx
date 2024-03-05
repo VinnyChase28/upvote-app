@@ -1,4 +1,5 @@
 import UpvotesList from "./components/UpvoteList";
+import PostList from "./components/PostList";
 import type { Post } from "./types";
 import "./App.css";
 
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <UpvotesList posts={posts} />
+        <PostList posts={posts} />
       </header>
     </div>
   );
