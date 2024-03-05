@@ -34,13 +34,13 @@ Breaking down the requirements and creating an implementation plan
     Task: Write tests for the Upvote and UpvotesList components, focusing on interaction (like clicking to toggle state) and rendering based on props.
 
 ## Ticket CS-6
-6. Final Testing and Cleanup
+6. Add ArrowList for the assessment
 
-    Task: Perform final testing on the entire application, check for and fix any bugs, and clean up the code (e.g., removing console logs, improving code readability).
+    Task: Each list should have its own set of upvote arrows (or arrow buttons).
+    Task: Clicking the "+" button adds a new upvote arrow to the respective list.
+    Task:All arrows within a list should share the same state, meaning if one arrow is selected, the new ones added should also be in the selected state or reflect the state of existing ones when added.
+    Task: The component should visually distinguish between the selected and default states of the arrows.
+    Task: The state of the upvotes should be managed collectively for all ArrowList components, likely using React context or a state management library like Zustand.
+    Task: The state of the upvotes should persist in the browser so that it's maintained when the page is refreshed.
+    
 
-## Ticket CS-7
-7. Stretch goals 
-
-    Task: Add navigation
-    Task: Add Theme toggle
-    Task: Add form to email the candidate
