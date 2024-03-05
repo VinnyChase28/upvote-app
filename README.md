@@ -24,20 +24,19 @@ Breaking down the requirements and creating an implementation plan
     Task: Implement functionality to persist the state of the upvotes in the browser's localStorage, ensuring that the state is restored when the page is refreshed.
 
 ## Ticket CS-4
-4. Writing Tests
+4. Add real posts with images
+    Task: Create a card component to display post info and upvote buttons.
+    Task: Create a posts feed that we can use to upvote and downvote posts.
+
+## Ticket CS-5
+5. Writing Tests
 
     Task: Write tests for the Upvote and UpvotesList components, focusing on interaction (like clicking to toggle state) and rendering based on props.
 
-## Ticket CS-5
-5. Final Testing and Cleanup
+## Ticket CS-6
+6. Final Testing and Cleanup
 
     Task: Perform final testing on the entire application, check for and fix any bugs, and clean up the code (e.g., removing console logs, improving code readability).
-
-## Ticket CS-6
-6. Build and Deployment Preparation
-
-    Task: Prepare the application for deployment by running the build script and performing any necessary pre-deployment steps.
-    Commit Point: After successfully building the project and before deploying, to mark the completion of development.
 
 ## Ticket CS-7
 7. Stretch goals 
