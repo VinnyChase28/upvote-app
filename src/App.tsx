@@ -1,10 +1,17 @@
-import Upvote from "./components/Upvote";
+import UpvotesList from "./components/UpvoteList";
+import type { Post } from "./types";
 import "./App.css";
+
+const posts: Post[] = [
+  { id: "1", title: "Post 1 Title", description: "Post 1 Description" },
+  { id: "2", title: "Post 2 Title", description: "Post 2 Description" },
+];
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Upvote postId="1" />
+        <UpvotesList posts={posts} />
       </header>
     </div>
   );

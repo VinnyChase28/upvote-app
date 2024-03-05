@@ -2,14 +2,14 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 interface UpvoteState {
-  upvotes: { [postId: string]: boolean };
+  upvotes: Record<string, boolean>;
   toggleSelected: (postId: string) => void;
 }
 
 export const useUpvoteStore = create<UpvoteState>()(
   persist(
     (set) => ({
-      upvotes: {}, // Empty object to start
+      upvotes: {},
       toggleSelected: (postId: string) =>
         set((state) => ({
           upvotes: {
