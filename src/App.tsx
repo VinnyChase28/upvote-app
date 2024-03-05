@@ -12,8 +12,18 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <UpvotesList posts={posts} />
-        <PostList posts={posts} />
+        <div className="flex justify-center items-center min-h-screen">
+          <div className="flex justify-between items-start w-full max-w-4xl p-4">
+            <div className="w-1/2 p-4">
+              <p> Posts</p>
+              <PostList posts={posts} />
+            </div>
+            <div className="w-1/2 p-4">
+              <p>Upvoted posts</p>
+              <UpvotesList posts={posts} />
+            </div>
+          </div>
+        </div>
       </header>
     </div>
   );
