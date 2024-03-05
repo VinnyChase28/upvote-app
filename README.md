@@ -40,7 +40,7 @@ Breaking down the requirements and creating an implementation plan
     Commit Point: After successfully building the project and before deploying, to mark the completion of development.
 
 ## Ticket CS-7
-7. Strech goals 
+7. Stretch goals 
 
     Task: Add navigation
     Task: Add Theme toggle
