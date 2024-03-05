@@ -22,7 +22,6 @@ const AlertComponent: React.FC<AlertComponentProps> = ({
           <AlertDescription>{description}</AlertDescription>
         </div>
       </div>
-      <Upvote postId={postId} />
     </Alert>
   );
 };
