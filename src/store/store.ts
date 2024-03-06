@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
+
 interface UpvoteState {
   upvotes: Record<string, boolean>;
   toggleSelected: (postId: string) => void;
@@ -23,3 +24,8 @@ export const useUpvoteStore = create<UpvoteState>()(
     }
   )
 );
+
+
+
+
+
