@@ -1,8 +1,8 @@
 import React from "react";
 import AlertComponent from "../Alert/Alert";
-import { useUpvoteStore } from "../../store/store"; // Adjust the import path as necessary
+import { useUpvoteStore } from "../../store/store"; 
 
-// Moved the definition of posts to inside the component
+//would fetch from the api here, so that the component can be reused
 const posts = [
   { id: "1", title: "Post 1 Title", description: "Post 1 Description" },
   { id: "2", title: "Post 2 Title", description: "Post 2 Description" },
@@ -10,7 +10,6 @@ const posts = [
 
 const UpvotesList: React.FC = () => {
   const { upvotes } = useUpvoteStore();
-
   const upvotedPosts = posts.filter((post) => upvotes[post.id]);
 
   return (

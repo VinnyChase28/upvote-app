@@ -25,10 +25,13 @@ export const useUpvoteStore = create<UpvoteState>()(
   )
 );
 
+
+//store for the tech challenge
 interface ArrowListState {
-  lists: Record<string, boolean[]>; // Each key represents a list ID, each value is an array indicating the selection state of arrows in the list
-  toggleArrow: (listId: string) => void; // Updated to no longer need the index parameter
+  lists: Record<string, boolean[]>;
+  toggleArrow: (listId: string) => void;
   addArrow: (listId: string) => void;
+  removeArrow: (listId: string) => void;
 }
 
 export const useArrowUpStore = create<ArrowListState>()(
@@ -56,6 +59,17 @@ export const useArrowUpStore = create<ArrowListState>()(
             lists: {
               ...state.lists,
               [listId]: [...listState, newState], // Add a new arrow with the determined state
+            },
+          };
+        }),
+      removeArrow: (listId: string) =>
+        set((state) => {
+          const listState = state.lists[listId] || [];
+          listState.pop(); // Remove the last arrow from the list
+          return {
+            lists: {
+              ...state.lists,
+              [listId]: listState,
             },
           };
         }),

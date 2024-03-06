@@ -1,12 +1,13 @@
 import Post from "../Post/Post";
 
-interface RedditPost {
+interface Post {
   id: string;
   title: string;
   description: string;
 }
 
-const posts: RedditPost[] = [
+//would fetch from the api here, so that the component can be reused
+const posts: Post[] = [
   { id: "1", title: "Post 1 Title", description: "Post 1 Description" },
   { id: "2", title: "Post 2 Title", description: "Post 2 Description" },
 ];
