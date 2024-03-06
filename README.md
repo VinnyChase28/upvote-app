@@ -14,7 +14,7 @@ Breaking down the requirements and creating an implementation plan
 
     Task: Integrate state management within the Upvote component to handle its selected/not-selected state. This will likely involve using React's useState hook.
 
-    Task: If the application requires multiple UpvotesList components to interact or share state, set up a context or another state management solution.
+    Task: If the application requires multiple UpvotesList components to interact or share state, set up Zustand.
 
 ## Ticket CS-3
 3. Create the Upvotes List Component
@@ -25,7 +25,9 @@ Breaking down the requirements and creating an implementation plan
 
 ## Ticket CS-4
 4. Add real posts with images
+
     Task: Create a card component to display post info and upvote buttons.
+
     Task: Create a posts feed that we can use to upvote and downvote posts.
 
 ## Ticket CS-5
