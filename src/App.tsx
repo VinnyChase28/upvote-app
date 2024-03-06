@@ -1,25 +1,24 @@
 import UpvotesList from "./components/UpvoteList/UpvoteList";
 import PostList from "./components/PostList/PostList";
-import type { Post } from "./types";
-import "./App.css";
 
-const posts: Post[] = [
-  { id: "1", title: "Post 1 Title", description: "Post 1 Description" },
-  { id: "2", title: "Post 2 Title", description: "Post 2 Description" },
-];
+import ArrowList from "./components/ArrowList/ArrowList";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="flex justify-center items-center min-h-screen">
-          <div className="flex justify-between items-start w-full max-w-4xl p-4">
-            <div className="w-1/2 p-4">
-              <PostList posts={posts} />
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-4">
+          <ArrowList />
+        </div>
+        <div className="flex justify-center items-center min-h-screen p-4">
+          <div className="flex flex-col md:flex-row gap-8 justify-between items-start w-full max-w-6xl">
+            <div className="md:w-1/2 p-4 bg-white rounded-lg shadow-md">
+              <PostList />
             </div>
-            <div className="w-1/2 p-4">
-              <p>Upvoted posts</p>
-              <UpvotesList posts={posts} />
+            <div className="md:w-1/2 p-4 bg-white rounded-lg shadow-md">
+              <p className="text-lg font-semibold mb-4">Upvoted Posts</p>
+              <UpvotesList />
             </div>
           </div>
         </div>

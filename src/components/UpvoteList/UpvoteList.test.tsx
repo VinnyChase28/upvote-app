@@ -26,29 +26,15 @@ const mockedUseUpvoteStore = useUpvoteStore as jest.MockedFunction<
 >;
 
 test("renders only upvoted posts", () => {
-  const posts = [
-    {
-      id: "1",
-      title: "Upvoted Post",
-      description: "This post has been upvoted.",
-    },
-    {
-      id: "2",
-      title: "Not Upvoted Post",
-      description: "This post has not been upvoted.",
-    },
-  ];
-
   // Setup mock store to indicate that only the first post is upvoted
   mockedUseUpvoteStore.mockImplementation(() => ({
     upvotes: { "1": true },
   }));
 
-  render(<UpvotesList posts={posts} />);
+  render(<UpvotesList />);
 
   // Check that the upvoted post is rendered
-  expect(screen.getByText("Upvoted Post")).toBeInTheDocument();
-  expect(screen.getByText("This post has been upvoted.")).toBeInTheDocument();
+  expect(screen.getByText("Post 1 Title")).toBeInTheDocument();
 
   // Check that the not upvoted post is not rendered
   expect(screen.queryByText("Not Upvoted Post")).not.toBeInTheDocument();

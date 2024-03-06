@@ -1,18 +1,17 @@
-// components/PostList.tsx
-import React from "react";
 import Post from "../Post/Post";
 
-interface PostData {
+interface RedditPost {
   id: string;
   title: string;
   description: string;
 }
 
-interface PostListProps {
-  posts: PostData[];
-}
+const posts: RedditPost[] = [
+  { id: "1", title: "Post 1 Title", description: "Post 1 Description" },
+  { id: "2", title: "Post 2 Title", description: "Post 2 Description" },
+];
 
-const PostList: React.FC<PostListProps> = ({ posts }) => {
+const PostList = () => {
   return (
     <div className="container mx-auto my-8">
       {posts.map((post) => (

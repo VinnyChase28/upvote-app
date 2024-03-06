@@ -17,3 +17,5 @@ const ArrowUp = ({ isSelected, toggleSelected }: ArrowUpProps) => {
     </div>
   );
 };
+
+export default ArrowUp;
