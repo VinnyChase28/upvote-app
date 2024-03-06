@@ -38,11 +38,13 @@ const ArrowControls: React.FC<ArrowControlsProps> = ({ listId }) => {
 interface ArrowListContainerProps {
   listId: string;
   role: string;
+  className?: string;
 }
 
 const ArrowListContainer: React.FC<ArrowListContainerProps> = ({
   listId,
   role,
+  className,
 }) => {
   const { lists, toggleArrow } = useArrowUpStore();
   const arrows = lists[listId] || [];
@@ -50,7 +52,7 @@ const ArrowListContainer: React.FC<ArrowListContainerProps> = ({
     <div
       key={listId}
       role={role}
-      className="relative p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
+      className={`relative p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out py-6 ${className}`}
     >
       <ScrollArea className="flex items-center space-x-2 overflow-x-auto h-[5rem]">
         <div className="flex w-max space-x-2 p-2">
@@ -72,7 +74,13 @@ const ArrowListContainer: React.FC<ArrowListContainerProps> = ({
 const ArrowList: React.FC = () => (
   <>
     {arrowListIds.map((listId) => (
-      <ArrowListContainer role="article" key={listId} listId={listId} />
+      // Added inline style for bottom margin. Adjust the value as needed.
+      <ArrowListContainer
+        role="article"
+        key={listId}
+        listId={listId}
+        className="mb-4"
+      />
     ))}
   </>
 );
