@@ -5,16 +5,15 @@ import { usePostStore } from "../../store/store";
 
 jest.mock("../../store/store", () => ({
   useUpvoteStore: jest.fn(),
-  usePostStore: jest.fn(), // Mock usePostStore as well
+  usePostStore: jest.fn(), 
 }));
 
-// Mocked data for posts
+
 const mockedPosts = [
   { id: "1", title: "Post 1 Title", description: "Post 1 Description" },
   { id: "2", title: "Post 2 Title", description: "Post 2 Description" },
 ];
 
-// Assuming useUpvoteStore and usePostStore have been mocked above
 const mockedUseUpvoteStore = useUpvoteStore as jest.MockedFunction<
   typeof useUpvoteStore
 >;

@@ -15,12 +15,33 @@ interface PostState {
   updatePost: (updatedPost: Post) => void;
 }
 
+//would normally fetch and sync with store
 export const usePostStore = create<PostState>()(
   persist(
     (set) => ({
       posts: [
-        { id: "1", title: "Post 1 Title", description: "Post 1 Description" },
-        { id: "2", title: "Post 2 Title", description: "Post 2 Description" },
+        {
+          id: "1",
+          title: "Sunny Day Musings",
+          description: "Reflections on a bright and cheerful day.",
+        },
+        {
+          id: "2",
+          title: "Tech Innovations",
+          description:
+            "Exploring the latest in technology and its impact on society.",
+        },
+        {
+          id: "3",
+          title: "Culinary Adventures",
+          description: "A journey through diverse cuisines and flavors.",
+        },
+        {
+          id: "4",
+          title: "Nature's Wonders",
+          description:
+            "Discovering the beauty and mysteries of the natural world.",
+        },
       ],
       addPost: (newPost) =>
         set((state) => ({
