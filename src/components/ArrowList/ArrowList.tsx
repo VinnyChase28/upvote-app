@@ -11,8 +11,13 @@ interface ArrowProps {
   toggleSelected: () => void;
 }
 
-const ArrowDisplay: React.FC<ArrowProps> = ({ isSelected, toggleSelected }) => (
-  <ArrowUp isSelected={isSelected} toggleSelected={toggleSelected} />
+export const ArrowDisplay: React.FC<ArrowProps> = ({
+  isSelected,
+  toggleSelected,
+}) => (
+  <div data-testid="arrow-up">
+    <ArrowUp isSelected={isSelected} toggleSelected={toggleSelected} />
+  </div>
 );
 
 interface ArrowControlsProps {
@@ -39,12 +44,21 @@ const ArrowControls: React.FC<ArrowControlsProps> = ({ listId }) => {
   );
 };
 
-const ArrowListContainer: React.FC<{ listId: string }> = ({ listId }) => {
+interface ArrowListContainerProps {
+  listId: string;
+  role: string;
+}
+
+const ArrowListContainer: React.FC<ArrowListContainerProps> = ({
+  listId,
+  role,
+}) => {
   const { lists, toggleArrow } = useArrowUpStore();
   const arrows = lists[listId] || [];
   return (
     <div
       key={listId}
+      role={role}
       className="relative p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
     >
       <ScrollArea className="flex items-center space-x-2 overflow-x-auto h-[5rem]">
@@ -67,7 +81,7 @@ const ArrowListContainer: React.FC<{ listId: string }> = ({ listId }) => {
 const ArrowList: React.FC = () => (
   <>
     {arrowListIds.map((listId) => (
-      <ArrowListContainer key={listId} listId={listId} />
+      <ArrowListContainer role="article" key={listId} listId={listId} />
     ))}
   </>
 );

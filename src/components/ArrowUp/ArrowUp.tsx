@@ -12,10 +12,16 @@ const ArrowUp = ({ isSelected, toggleSelected }: ArrowUpProps) => {
   };
 
   return (
-    <div style={style} onClick={toggleSelected} className="cursor-pointer">
+    <div
+      data-testid="arrow-up" // Add this line
+      style={style}
+      onClick={toggleSelected}
+      className="cursor-pointer"
+    >
       <LucideArrowUp />
     </div>
   );
 };
+
 
 export default ArrowUp;
