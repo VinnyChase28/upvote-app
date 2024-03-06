@@ -1,4 +1,5 @@
 import Post from "../Post/Post";
+import { usePostStore } from "../../store/store";
 
 interface Post {
   id: string;
@@ -6,13 +7,9 @@ interface Post {
   description: string;
 }
 
-//would fetch from the api here, so that the component can be reused
-const posts: Post[] = [
-  { id: "1", title: "Post 1 Title", description: "Post 1 Description" },
-  { id: "2", title: "Post 2 Title", description: "Post 2 Description" },
-];
-
 const PostList = () => {
+  const { posts } = usePostStore();
+
   return (
     <div className="container mx-auto my-8">
       {posts.map((post) => (

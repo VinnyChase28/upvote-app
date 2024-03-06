@@ -1,6 +1,48 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
+
+interface Post {
+  id: string;
+  title: string;
+  description: string;
+}
+
+interface PostState {
+  posts: Post[];
+  addPost: (newPost: Post) => void;
+  removePost: (postId: string) => void;
+  updatePost: (updatedPost: Post) => void;
+}
+
+export const usePostStore = create<PostState>()(
+  persist(
+    (set) => ({
+      posts: [
+        { id: "1", title: "Post 1 Title", description: "Post 1 Description" },
+        { id: "2", title: "Post 2 Title", description: "Post 2 Description" },
+      ],
+      addPost: (newPost) =>
+        set((state) => ({
+          posts: [...state.posts, newPost],
+        })),
+      removePost: (postId) =>
+        set((state) => ({
+          posts: state.posts.filter((post) => post.id !== postId),
+        })),
+      updatePost: (updatedPost) =>
+        set((state) => ({
+          posts: state.posts.map((post) =>
+            post.id === updatedPost.id ? updatedPost : post
+          ),
+        })),
+    }),
+    {
+      name: "post-storage", // name of the storage (localStorage by default)
+    }
+  )
+);
+
 //updoots
 interface UpvoteState {
   upvotes: Record<string, boolean>;
@@ -24,7 +66,6 @@ export const useUpvoteStore = create<UpvoteState>()(
     }
   )
 );
-
 
 //store for the tech challenge
 interface ArrowListState {
@@ -75,7 +116,7 @@ export const useArrowUpStore = create<ArrowListState>()(
         }),
     }),
     {
-      name: "arrow-up-list-storage", // Unique name for localStorage key
+      name: "arrow-up-list-storage",
     }
   )
 );

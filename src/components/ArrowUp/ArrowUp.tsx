@@ -1,4 +1,4 @@
-import { ArrowUpNarrowWide } from "lucide-react";
+import { LucideArrowUp } from "lucide-react";
 
 interface ArrowUpProps {
   isSelected: boolean;
@@ -12,8 +12,8 @@ const ArrowUp = ({ isSelected, toggleSelected }: ArrowUpProps) => {
   };
 
   return (
-    <div style={style} onClick={toggleSelected}>
-      <ArrowUpNarrowWide />
+    <div style={style} onClick={toggleSelected} className="cursor-pointer">
+      <LucideArrowUp />
     </div>
   );
 };

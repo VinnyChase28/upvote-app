@@ -1,7 +1,7 @@
 import UpvotesList from "./components/UpvoteList/UpvoteList";
 import PostList from "./components/PostList/PostList";
-
 import ArrowList from "./components/ArrowList/ArrowList";
+
 import "./App.css";
 
 function App() {
