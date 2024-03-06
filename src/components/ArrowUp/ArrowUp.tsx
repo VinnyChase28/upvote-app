@@ -13,7 +13,7 @@ const ArrowUp = ({ isSelected, toggleSelected }: ArrowUpProps) => {
 
   return (
     <div
-      data-testid="arrow-up" // Add this line
+      data-testid="arrow-up"
       style={style}
       onClick={toggleSelected}
       className="cursor-pointer"

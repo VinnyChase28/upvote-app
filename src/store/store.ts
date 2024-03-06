@@ -103,9 +103,8 @@ export const useArrowUpStore = create<ArrowListState>()(
       toggleArrow: (listId: string) =>
         set((state) => {
           const listState = state.lists[listId] || [];
-          const newState = listState.length > 0 ? !listState[0] : true; // Determine the new state based on the first arrow's current state, default to true if list is empty
-          const updatedList = listState.map(() => newState); // Set all arrows in the list to the new state
-
+          const newState = listState.length > 0 ? !listState[0] : true;
+          const updatedList = listState.map(() => newState);
           return {
             lists: {
               ...state.lists,
@@ -116,18 +115,18 @@ export const useArrowUpStore = create<ArrowListState>()(
       addArrow: (listId: string) =>
         set((state) => {
           const listState = state.lists[listId] || [];
-          const newState = listState.length > 0 ? listState[0] : false; // New arrows match the state of the first arrow in the list, default to false if list is empty
+          const newState = listState.length > 0 ? listState[0] : false;
           return {
             lists: {
               ...state.lists,
-              [listId]: [...listState, newState], // Add a new arrow with the determined state
+              [listId]: [...listState, newState],
             },
           };
         }),
       removeArrow: (listId: string) =>
         set((state) => {
           const listState = state.lists[listId] || [];
-          listState.pop(); // Remove the last arrow from the list
+          listState.pop(); 
           return {
             lists: {
               ...state.lists,
