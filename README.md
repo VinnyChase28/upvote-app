@@ -37,10 +37,15 @@ Breaking down the requirements and creating an implementation plan
 6. Add ArrowList for the assessment
 
     Task: Each list should have its own set of upvote arrows (or arrow buttons).
-    Task: Clicking the "+" button adds a new upvote arrow to the respective list.
-    Task:All arrows within a list should share the same state, meaning if one arrow is selected, the new ones added should also be in the selected state or reflect the state of existing ones when added.
-    Task: The component should visually distinguish between the selected and default states of the arrows.
-    Task: The state of the upvotes should be managed collectively for all ArrowList components, likely using React context or a state management library like Zustand.
-    Task: The state of the upvotes should persist in the browser so that it's maintained when the page is refreshed.
     
+    Task: Clicking the "+" button adds a new upvote arrow to the respective list.
+    
+    Task:All arrows within a list should share the same state, meaning if one arrow is selected, the new ones added should also be in the selected state or reflect the state of existing ones when added.
+    
+    Task: The component should visually distinguish between the selected and default states of the arrows.
+    
+    Task: The state of the upvotes should be managed collectively for all ArrowList components, likely using React context or a state management library like Zustand.
+    
+    Task: The state of the upvotes should persist in the browser so that it's maintained when the page is refreshed.
+
 

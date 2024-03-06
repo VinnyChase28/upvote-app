@@ -1,23 +1,23 @@
-// PostList.test.tsx
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import PostList from "./PostList";
-
-const posts = [
-  {
-    id: "1",
-    title: "First Post",
-    description: "Description of the first post",
-  },
-  {
-    id: "2",
-    title: "Second Post",
-    description: "Description of the second post",
-  },
+import * as store from "../../store/store";
+const mockPosts = [
+  { id: "1", title: "Post 1 Title", description: "Post 1 Description" },
+  { id: "2", title: "Post 2 Title", description: "Post 2 Description" },
 ];
 
+beforeEach(() => {
+  jest
+    .spyOn(store, "usePostStore")
+    .mockImplementation(() => ({ posts: mockPosts }));
+});
+
+afterEach(() => {
+  jest.clearAllMocks();
+});
+
 test("renders PostList with multiple Post components", () => {
-  render(<PostList posts={posts} />);
-  expect(screen.getByText("First Post")).toBeInTheDocument();
-  expect(screen.getByText("Second Post")).toBeInTheDocument();
+  render(<PostList />);
+  expect(screen.getByText("Post 1 Title")).toBeInTheDocument();
+  expect(screen.getByText("Post 2 Title")).toBeInTheDocument();
 });

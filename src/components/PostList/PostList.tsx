@@ -1,18 +1,15 @@
-// components/PostList.tsx
-import React from "react";
 import Post from "../Post/Post";
+import { usePostStore } from "../../store/store";
 
-interface PostData {
+interface Post {
   id: string;
   title: string;
   description: string;
 }
 
-interface PostListProps {
-  posts: PostData[];
-}
+const PostList = () => {
+  const { posts } = usePostStore();
 
-const PostList: React.FC<PostListProps> = ({ posts }) => {
   return (
     <div className="container mx-auto my-8">
       {posts.map((post) => (

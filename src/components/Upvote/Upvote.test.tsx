@@ -3,7 +3,6 @@ import userEvent from "@testing-library/user-event";
 import Upvote from "./Upvote";
 import { useUpvoteStore } from "../../store/store";
 
-
 jest.mock("../../store/store", () => ({
   useUpvoteStore: jest.fn(),
 }));
