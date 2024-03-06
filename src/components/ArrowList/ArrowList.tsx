@@ -30,16 +30,16 @@ const ArrowList = () => {
             </ScrollArea>
             <div className="p-2 flex justify-end space-x-2">
               <button
-                onClick={() => addArrow(listId)}
-                className="p-2 bg-blue-500 text-white rounded shadow"
-              >
-                +
-              </button>
-              <button
                 onClick={() => removeArrow(listId)}
                 className="p-2 bg-red-500 text-white rounded shadow"
               >
                 -
+              </button>
+              <button
+                onClick={() => addArrow(listId)}
+                className="p-2 bg-blue-500 text-white rounded shadow"
+              >
+                +
               </button>
             </div>
           </div>
