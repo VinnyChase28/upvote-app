@@ -2,6 +2,7 @@ import React from "react";
 import ArrowUp from "../ArrowUp/ArrowUp";
 import { useArrowUpStore } from "../../store/store";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
+import { Button } from "../ui/button";
 
 // Would normally fetch this from an API
 const arrowListIds = ["list1", "list2", "list3"];
@@ -28,18 +29,8 @@ const ArrowControls: React.FC<ArrowControlsProps> = ({ listId }) => {
   const { addArrow, removeArrow } = useArrowUpStore();
   return (
     <div className="p-2 flex justify-end space-x-2">
-      <button
-        onClick={() => removeArrow(listId)}
-        className="p-2 bg-red-500 text-white rounded shadow"
-      >
-        -
-      </button>
-      <button
-        onClick={() => addArrow(listId)}
-        className="p-2 bg-blue-500 text-white rounded shadow"
-      >
-        +
-      </button>
+      <Button onClick={() => removeArrow(listId)}>-</Button>
+      <Button onClick={() => addArrow(listId)}>+</Button>
     </div>
   );
 };

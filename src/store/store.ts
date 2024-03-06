@@ -59,7 +59,7 @@ export const usePostStore = create<PostState>()(
         })),
     }),
     {
-      name: "post-storage", // name of the storage (localStorage by default)
+      name: "post-storage", 
     }
   )
 );
